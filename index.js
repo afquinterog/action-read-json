@@ -8,6 +8,7 @@ const main = async () => {
   const path = core.getInput('path')
   const content = await fs.readFile(path, 'utf8')
   var json = parser.toJson(content);
+  console.log(json)
   core.setOutput('content', json)
 }
 
