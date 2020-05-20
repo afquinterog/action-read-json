@@ -2,7 +2,6 @@
 
 const core = require('@actions/core')
 const { promises: fs } = require('fs')
-const parser = require('xml2json')
 
 const main = async () => {
   const path = core.getInput('path')
