@@ -144,7 +144,8 @@ const main = async () => {
   const content = await fs.readFile(path, 'utf8')
   parser.parseString(content, function(error, result) {
     if(error === null) {
-        result = JSON.stringify(result)
+        //result = JSON.stringify(result)
+        result = JSON.parse(result)
         //const tag = /\"version\"\: \[(.*?)\]/.exec(result)
         core.setOutput('content', result)
     }
