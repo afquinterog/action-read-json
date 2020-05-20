@@ -9,8 +9,8 @@ const main = async () => {
   //var json = parser.toJson(content);
   const tag = /<version>(.*?)<\/version>/.exec(content)
   //content = content[1]
-  version = tag[1]
-  core.setOutput('content', version)
+  //version = tag[1]
+  core.setOutput('content', tag)
 }
 
 main().catch(err => core.setFailed(err.message))
