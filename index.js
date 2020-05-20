@@ -10,7 +10,7 @@ const main = async () => {
   const content = await fs.readFile(path, 'utf8')
   parser.parseString(content, function(error, result) {
     if(error === null) {
-        core.setOutput('content', result)
+        core.setOutput('content', result.version)
     }
   });
   //var json = parser.toJson(content);
