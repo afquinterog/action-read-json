@@ -6,7 +6,7 @@ const parser = require('xml2json')
 
 const main = async () => {
   const path = core.getInput('path')
-  const content = await fs.readFile(path, 'utf8')
+  //const content = await fs.readFile(path, 'utf8')
   //var json = parser.toJson(content);
   //tag = content.match(/<version>([^<]*)<\/version>/)
   //content = content[1]
