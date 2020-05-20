@@ -141,18 +141,25 @@ const parser = new xml2js.Parser({ attrkey: "ATTR" });
 
 const main = async () => {
   const path = core.getInput('path')
-  const content = await fs.readFile(path, 'utf8')
-  parser.parseString(content, function(error, result) {
-    if(error === null) {
-        result = JSON.stringify(result)
-        result = JSON.parse(result)
-        //result = result.split('"version": [')
-        //result = result[1]
-        //result = JSON.parse(result)
-        //const tag = /\"version\"\: \[(.*?)\]/.exec(result)
-        core.setOutput('content', result)
-    }
+  //const content = await fs.readFile(path, 'utf8')
+
+  const content = await fs.readFile(route, 'utf8', function(error,data){
+    const result = JSON.stringify(data)
+    const version = result.match( /<version[^>]*>([\s\S]*?)<\/version>/i )[1]
+    core.setOutput('content', version)
   });
+
+  // parser.parseString(content, function(error, result) {
+  //   if(error === null) {
+  //       result = JSON.stringify(result)
+  //       result = JSON.parse(result)
+  //       //result = result.split('"version": [')
+  //       //result = result[1]
+  //       //result = JSON.parse(result)
+  //       //const tag = /\"version\"\: \[(.*?)\]/.exec(result)
+  //       core.setOutput('content', result)
+  //   }
+  // });
   //var json = parser.toJson(content);
   //const tag = /<version>(.*?)<\/version>/.exec(content)
   //content = content[1]
