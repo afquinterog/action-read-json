@@ -2,7 +2,7 @@
 
 const core = require('@actions/core')
 const xml2js = require('xml2js');
-const { promises: fs } = require('fs')
+const fs = require('fs')
 const parser = new xml2js.Parser({ attrkey: "ATTR" });
 
 const main = async () => {

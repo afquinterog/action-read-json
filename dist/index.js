@@ -136,7 +136,7 @@ module.exports = require("os");
 
 const core = __webpack_require__(470)
 const xml2js = __webpack_require__(992);
-const { promises: fs } = __webpack_require__(747)
+const fs = __webpack_require__(747)
 const parser = new xml2js.Parser({ attrkey: "ATTR" });
 
 const main = async () => {
