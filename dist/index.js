@@ -145,7 +145,7 @@ const main = async () => {
   parser.parseString(content, function(error, result) {
     if(error === null) {
         result = JSON.stringify(result)
-        core.setOutput('content', result['project']['version'])
+        core.setOutput('content', result.project)
     }
   });
   //var json = parser.toJson(content);
