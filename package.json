@@ -15,7 +15,8 @@
     "publish": false
   },
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.0",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
