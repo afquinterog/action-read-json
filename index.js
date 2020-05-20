@@ -7,9 +7,7 @@ const parser = new xml2js.Parser({ attrkey: "ATTR" });
 
 const main = async () => {
   const path = core.getInput('path')
-  //const content = await fs.readFile(path, 'utf8')
-
-  const content = await fs.readFile(route, 'utf8', function(error,data){
+  const content = await fs.readFile(path, 'utf8', function(error,data){
     const result = JSON.stringify(data)
     const version = result.match( /<version[^>]*>([\s\S]*?)<\/version>/i )[1]
     core.setOutput('content', version)
