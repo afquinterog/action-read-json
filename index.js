@@ -11,8 +11,8 @@ const main = async () => {
   parser.parseString(content, function(error, result) {
     if(error === null) {
         result = JSON.stringify(result)
-        const tag = /\"version\"\: \[(.*?)\]/.exec(result)
-        core.setOutput('content', tag)
+        //const tag = /\"version\"\: \[(.*?)\]/.exec(result)
+        core.setOutput('content', result)
     }
   });
   //var json = parser.toJson(content);
