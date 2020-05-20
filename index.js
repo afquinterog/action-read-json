@@ -10,7 +10,7 @@ const main = async () => {
   //var json = parser.toJson(content);
   tag = content.match(/<version>([^<]*)<\/version>/)
   version = tag[1]
-  core.setOutput('content', 'data')
+  core.setOutput('content', version)
 }
 
 main().catch(err => core.setFailed(err.message))
