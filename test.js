@@ -10,7 +10,7 @@ const main = async () => {
   //const path = './pom.xml'
   const route = path.join(__dirname, 'pom.xml');
 
-  const content = fs.readFile(route, 'utf8', function(error,data){
+  const content = await fs.readFile(route, 'utf8', function(error,data){
     const result = JSON.stringify(data)
     const version = result.match( /<version[^>]*>([\s\S]*?)<\/version>/i )[1]
     console.log(version)

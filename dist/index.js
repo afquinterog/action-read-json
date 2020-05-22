@@ -146,23 +146,6 @@ const main = async () => {
     const version = result.match( /<version[^>]*>([\s\S]*?)<\/version>/i )[1]
     core.setOutput('content', version)
   });
-
-  // parser.parseString(content, function(error, result) {
-  //   if(error === null) {
-  //       result = JSON.stringify(result)
-  //       result = JSON.parse(result)
-  //       //result = result.split('"version": [')
-  //       //result = result[1]
-  //       //result = JSON.parse(result)
-  //       //const tag = /\"version\"\: \[(.*?)\]/.exec(result)
-  //       core.setOutput('content', result)
-  //   }
-  // });
-  //var json = parser.toJson(content);
-  //const tag = /<version>(.*?)<\/version>/.exec(content)
-  //content = content[1]
-  //version = tag[1]
-  //core.setOutput('content', tag)
 }
 
 main().catch(err => core.setFailed(err.message))
