@@ -18,7 +18,7 @@
         <skip.it>true</skip.it>
 
         <!-- Dependencies -->
-        <vaadin.version>14.1.27</vaadin.version>
+        <vaadin.version>19.0.5</vaadin.version>
         <aws.sdk.version>2.10.41</aws.sdk.version>
         <flyway.version>6.4.1</flyway.version>
         <activemq.version>5.15.8</activemq.version>
